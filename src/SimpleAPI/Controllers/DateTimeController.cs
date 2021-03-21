@@ -11,6 +11,7 @@ namespace SimpleAPI.Controllers
         {
             return DateTime.Now.Date.ToShortDateString();
         }
+        [HttpGet]
         public string Time()
         {
             return DateTime.Now.ToShortTimeString();
