@@ -13,3 +13,6 @@ msbuild.wrn
 # IDE related
 .vs/
 .vscode/
+
+# User Related
+*.csproj.user

@@ -7,11 +7,13 @@ namespace SimpleAPI.Controllers
     public class DateTimeController : ControllerBase
     {
         [HttpGet]
+        [Route("date")]
         public string Date()
         {
             return DateTime.Now.Date.ToShortDateString();
         }
         [HttpGet]
+        [Route("time")]
         public string Time()
         {
             return DateTime.Now.ToShortTimeString();

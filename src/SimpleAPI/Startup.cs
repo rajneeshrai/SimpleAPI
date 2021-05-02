@@ -11,6 +11,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using SimpleAPI.Database;
+using Microsoft.EntityFrameworkCore;
 
 namespace SimpleAPI
 {
@@ -32,6 +34,8 @@ namespace SimpleAPI
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "SimpleAPI", Version = "v1" });
             });
+            services.AddDbContext<EmployeeContext>(contextBuilder => contextBuilder.UseSqlite("Data Source=./Database/database.db"));
+            services.AddScoped<EmployeeContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
